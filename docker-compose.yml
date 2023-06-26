@@ -1,0 +1,26 @@
+version: '3.3'
+
+networks:
+  traefik:
+    external: true
+
+services:
+  webserver:
+    networks:
+      - traefik
+    build:
+      context: ./.docker/nginx
+    working_dir: /application
+    volumes:
+      - .:/application
+      - ./.docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik
+      - traefik.port=80
+      - traefik.http.routers.alvazszamlekerdezes.rule=Host(`alvazszamlekerdezes.localhost`)
+      - traefik.http.services.alvazszamlekerdezes.loadbalancer.server.port=80
+      - traefik.http.middlewares.alvazszamlekerdezes.redirectscheme.scheme=https
+      # SSL
+      - traefik.http.routers.alvazszamlekerdezes.tls.certresolver=le
+      - traefik.http.routers.alvazszamlekerdezes.entrypoints=websecure
