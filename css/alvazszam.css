@@ -1014,6 +1014,16 @@ a {
   box-shadow: 0 10px 32px rgba(2, 9, 25, .1);
 }
 
+.link-block-4 {
+  align-items: center;
+  margin-top: 16px;
+  display: flex;
+}
+
+.image-10 {
+  margin-right: 4px;
+}
+
 @media screen and (max-width: 991px) {
   .menu-link {
     margin-bottom: 16px;
