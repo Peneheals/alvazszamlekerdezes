@@ -1,0 +1,10 @@
+name: alvazszamlekerdezes
+
+services:
+  appserver:
+    type: nginx:1.29
+    webroot: .
+    ssl: true
+proxy:
+  appserver:
+    - alvazszamlekerdezes.lndo.site
