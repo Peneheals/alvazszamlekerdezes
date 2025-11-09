@@ -1,5 +1,5 @@
 const urls = {
-    'karkereso': 'https://www.ecdh.hu/kartorteneti-lekerdezes/megrendeles?vin=',
+    'karkereso': 'https://jarmulekerdezes.hu/megrendeles.php?vin=',
     'jarmuelemzes': 'https://jarmuelemzes.ecdh.hu/alvazszam-ellenorzes-rendben?vin=',
 }
 
